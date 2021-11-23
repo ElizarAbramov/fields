@@ -9,10 +9,6 @@ public class Radio {
         return currentStation;
     }
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
     public void setCurrentStation(int currentStation) {
         if (currentStation < 0) {
             return;
@@ -21,6 +17,11 @@ public class Radio {
             return;
         }
         this.currentStation = currentStation;
+    }
+
+    public int getCurrentVolume() {
+
+        return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
@@ -40,62 +41,62 @@ public class Radio {
     }
 
 
-        public void prevStation () {
-            if (currentStation == 0) {
-                this.currentStation = getMaxStation();
-            }
-        }
-
-        public void increaseStation () {
-            if (currentStation < 9) {
-                currentStation = currentStation + 1;
-            }
-        }
-
-        public void decreaseStation () {
-            if (currentStation > 0) {
-                currentStation = currentStation - 1;
-            }
-
-        }
-
-        public int getMaxStation () {
-            return 9;
-        }
-
-        // volumeMethods
-
-        public void increaseVolume () {
-            if (currentVolume < 10) {
-                currentVolume = currentVolume + 1;
-            }
-        }
-
-        public void decreaseVolume () {
-            if (currentVolume > 0) {
-                currentVolume = currentVolume - 1;
-            }
-
-        }
-
-        public void increaseVolumeUnderMax () {
-            if (currentVolume == 10) {
-
-                currentVolume = getMaxVolume();
-            }
-        }
-
-        public void decreaseVolumeBelowMin () {
-            if (currentVolume == 0) {
-
-                currentVolume = 0;
-            }
-        }
-
-        public int getMaxVolume () {
-            return 10;
+    public void prevStation() {
+        if (currentStation == 0) {
+            this.currentStation = getMaxStation();
         }
     }
+
+    public void increaseStation() {
+        if (currentStation < 9) {
+            currentStation = currentStation + 1;
+        }
+    }
+
+    public void decreaseStation() {
+        if (currentStation > 0) {
+            currentStation = currentStation - 1;
+        }
+
+    }
+
+    public int getMaxStation() {
+        return 9;
+    }
+
+    // volumeMethods
+
+    public void increaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+    }
+
+    public void decreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+
+    }
+
+    public void increaseVolumeUnderMax() {
+        if (currentVolume == 10) {
+
+            currentVolume = getMaxVolume();
+        }
+    }
+
+    public void decreaseVolumeBelowMin() {
+        if (currentVolume == 0) {
+
+            currentVolume = 0;
+        }
+    }
+
+    public int getMaxVolume() {
+        return 10;
+    }
+}
 
 
 
