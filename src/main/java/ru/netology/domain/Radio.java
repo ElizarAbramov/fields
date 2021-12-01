@@ -35,29 +35,20 @@ public class Radio {
     }
 
     public void nextStation() {
-        if (currentStation == 9) {
-            this.currentStation = 0;
+
+        if (currentStation < 9) {
+            this.currentStation = currentStation + 1;
+        } else {
+            currentStation = 0;
         }
     }
-
 
     public void prevStation() {
-        if (currentStation == 0) {
-            this.currentStation = getMaxStation();
-        }
-    }
-
-    public void increaseStation() {
-        if (currentStation < 9) {
-            currentStation = currentStation + 1;
-        }
-    }
-
-    public void decreaseStation() {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
+        } else {
+            currentStation = 9;
         }
-
     }
 
     public int getMaxStation() {
@@ -97,8 +88,3 @@ public class Radio {
         return 10;
     }
 }
-
-
-
-
-

@@ -7,63 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RadioTest {
 
     @Test
-    public void shouldNextStation() {
-
-        Radio radio = new Radio();
-        radio.setCurrentStation(9);
-
-        radio.nextStation();
-
-        int actual = radio.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldNextStationNegative() {
-
-        Radio radio = new Radio();
-        radio.setCurrentStation(8);
-
-        radio.nextStation();
-
-        int actual = radio.getCurrentStation();
-        int expected = 8;
-
-        assertEquals(expected, actual);
-    }
-
-
-    @Test
-    public void shouldPrevStation() {
-
-        Radio radio = new Radio();
-        radio.setCurrentStation(0);
-
-        radio.prevStation();
-
-        int actual = radio.getCurrentStation();
-        int expected = 9;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldPrevStationNegative() {
-
-        Radio radio = new Radio();
-        radio.setCurrentStation(1);
-
-        radio.prevStation();
-
-        int actual = radio.getCurrentStation();
-        int expected = 1;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
     public void shouldNegativeSetStationMin() {
 
         Radio radio = new Radio();
@@ -88,12 +31,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForZero() {
+    public void shouldNextStationForZero() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(0);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 1;
@@ -102,12 +45,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForOne() {
+    public void shouldNextStationForOne() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(1);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 2;
@@ -116,12 +59,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForTwo() {
+    public void shouldNextStationForTwo() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(2);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 3;
@@ -130,12 +73,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForThree() {
+    public void shouldNextStationForThree() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(3);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 4;
@@ -144,12 +87,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForFour() {
+    public void shouldNextStationForFour() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(4);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 5;
@@ -158,12 +101,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForFive() {
+    public void shouldNextStationForFive() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(5);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 6;
@@ -172,12 +115,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForSix() {
+    public void shouldNextStationForSix() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(6);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 7;
@@ -186,12 +129,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForSeven() {
+    public void shouldNextStationForSeven() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(7);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 8;
@@ -200,12 +143,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForEight() {
+    public void shouldNextStationForEight() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(8);
 
-        radio.increaseStation();
+        radio.nextStation();
 
         int actual = radio.getCurrentStation();
         int expected = 9;
@@ -214,12 +157,26 @@ class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseStationForNine() {
+    public void shouldNextStationForNine() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(9);
 
-        radio.increaseStation();
+        radio.nextStation();
+
+        int actual = radio.getCurrentStation();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldPrevStationForZero() {
+
+        Radio radio = new Radio();
+        radio.setCurrentStation(0);
+
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 9;
@@ -228,27 +185,26 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForZero() {
+    public void shouldPrevStationForMinusOne() {
 
         Radio radio = new Radio();
-        radio.setCurrentStation(0);
+        radio.setCurrentStation(-1);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
-        int expected = 0;
+        int expected = 9;
 
         assertEquals(expected, actual);
     }
 
-
     @Test
-    public void shouldDecreaseStationForOne() {
+    public void shouldPrevStationForOne() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(1);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 0;
@@ -257,12 +213,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForTwo() {
+    public void shouldPrevStationForTwo() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(2);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 1;
@@ -271,12 +227,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForThree() {
+    public void shouldPrevStationForThree() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(3);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 2;
@@ -285,12 +241,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForFour() {
+    public void shouldPrevStationForFour() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(4);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 3;
@@ -299,12 +255,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForFive() {
+    public void shouldPrevStationForFive() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(5);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 4;
@@ -313,12 +269,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForSix() {
+    public void shouldPrevStationForSix() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(6);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 5;
@@ -327,12 +283,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForSeven() {
+    public void shouldPrevStationForSeven() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(7);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 6;
@@ -341,12 +297,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForEight() {
+    public void shouldPrevStationForEight() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(8);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 7;
@@ -355,12 +311,12 @@ class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseStationForNine() {
+    public void shouldPrevStationForNine() {
 
         Radio radio = new Radio();
         radio.setCurrentStation(9);
 
-        radio.decreaseStation();
+        radio.prevStation();
 
         int actual = radio.getCurrentStation();
         int expected = 8;
